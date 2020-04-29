@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".activities.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_margin="20dp"/>
+
+    <Button
+        android:id="@+id/btn_example1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_selector"
+        android:onClick="onClick"
+        android:text="Example 1"
+        android:textColor="@color/md_white_1000"
+        android:textSize="14sp" />
+
+
+    <Button
+        android:id="@+id/btn_example2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_selector"
+        android:onClick="onClick"
+        android:text="Example 2"
+        android:textColor="@color/md_white_1000"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_example3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_selector"
+        android:onClick="onClick"
+        android:text="Example 3"
+        android:textColor="@color/md_white_1000"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_example4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_blue_selector"
+        android:onClick="onClick"
+        android:text="Example 4"
+        android:textColor="@color/md_white_1000"
+        android:textSize="14sp" />
+
+
+</LinearLayout>

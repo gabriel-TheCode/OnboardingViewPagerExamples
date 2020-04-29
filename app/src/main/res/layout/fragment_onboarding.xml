@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.OnboardingFragment"
+    android:padding="30dp">
+
+
+
+
+    <ImageView
+        android:id="@+id/image_onboarding"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/ic_app_user_colour"
+        android:layout_marginBottom="30dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_onboarding_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_onboarding"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/title_onboarding_1"
+        android:textSize="19sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/dark_grey"
+        android:layout_marginBottom="30dp"
+        fontPath="AvenirNextLTPro-Bold.otf"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_onboarding_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_onboarding_title"
+        android:text="@string/description_onboarding_1"
+        android:textSize="14sp"
+        android:textColor="@color/light_grey"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"/>
+
+
+
+</RelativeLayout>
+</com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView>

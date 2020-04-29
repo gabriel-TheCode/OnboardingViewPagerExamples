@@ -1,7 +1,8 @@
-package com.thecode.onboardingviewagerexamples
+package com.thecode.onboardingviewagerexamples.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.thecode.onboardingviewagerexamples.R
 
 class OnboardingExample2Activity : AppCompatActivity() {
 

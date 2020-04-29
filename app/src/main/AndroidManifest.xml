@@ -8,11 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".OnboardingExample1Activity"/>
-        <activity android:name=".OnboardingExample2Activity"/>
-        <activity android:name=".OnboardingExample3Activity"/>
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activities.OnboardingFinishActivity"></activity>
+        <activity android:name=".activities.OnboardingExample1Activity" />
+        <activity android:name=".activities.OnboardingExample2Activity" />
+        <activity android:name=".activities.OnboardingExample3Activity" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
