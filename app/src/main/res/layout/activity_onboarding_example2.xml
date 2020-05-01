@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_gradient_home">
 
-</LinearLayout>
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".activities.StartActivity"
+        android:background="@color/md_white_1000">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_rounded_bottom_blue"
+            android:layout_above="@id/layout_info"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:overScrollMode="never" />
+
+            <com.rd.PageIndicatorView
+                android:id="@+id/pageIndicatorView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                app:piv_animationType="scale"
+                app:piv_dynamicCount="true"
+                app:piv_interactiveAnimation="true"
+                app:piv_selectedColor="@color/md_white_1000"
+                app:piv_unselectedColor="@color/md_blue_100"
+                app:piv_viewPager="@id/viewPager"
+                app:piv_padding="8dp"
+                app:piv_radius="6dp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:weightSum="10">
+
+
+            <TextView
+                android:id="@+id/btn_login"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/account_creation_suggest"
+                android:gravity="center"
+                android:textColor="@color/md_blue_500"
+                android:textSize="12sp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_create_account"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_blue_selector"
+                android:text="@string/create_account"
+                android:textAllCaps="true"
+                android:textColor="@color/md_white_1000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_policy_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/md_grey_600"
+                android:gravity="center"
+                android:text="@string/start_text_advice"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView>

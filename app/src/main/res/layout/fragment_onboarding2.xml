@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="30dp"
+        android:gravity="center">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/image_onboarding"
+            android:layout_width="230dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerCrop"
+            app:lottie_rawRes="@raw/lottie_money"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_onboarding_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_onboarding"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/title_onboarding_1"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/md_white_1000"
+            android:layout_marginBottom="20dp"
+            fontPath="fonts/Poppins-Medium.ttf"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_onboarding_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_onboarding_title"
+            android:text="@string/description_onboarding_1"
+            android:textSize="14sp"
+            android:textColor="@color/md_black_1000"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+</com.code.variance.thedigitalbankuidemo.Utils.BounceScrollView>
