@@ -26,7 +26,11 @@ class MainActivity : AppCompatActivity() {
                     Intent(applicationContext, OnboardingExample2Activity::class.java)
                 startActivity(intent)
             }
-            R.id.btn_example3 -> {}
+            R.id.btn_example3 -> {
+                val intent =
+                    Intent(applicationContext, OnboardingExample3Activity::class.java)
+                startActivity(intent)
+            }
             R.id.btn_example4 -> {}
         }
     }

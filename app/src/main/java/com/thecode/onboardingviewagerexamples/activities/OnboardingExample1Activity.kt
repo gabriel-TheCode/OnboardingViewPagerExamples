@@ -35,7 +35,7 @@ class OnboardingExample1Activity : AppCompatActivity() {
         val btnNextStep: Button = findViewById(R.id.btn_next_step)
 
         btnNextStep.setOnClickListener {
-            if (getItem(+1) > 2) {
+            if (getItem(+1) > mViewPager.childCount-1) {
                 finish()
                 val intent =
                     Intent(applicationContext, OnboardingFinishActivity::class.java)

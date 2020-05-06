@@ -11,19 +11,21 @@ import com.thecode.onboardingviewagerexamples.R
 import kotlinx.android.synthetic.main.fragment_onboarding2.view.*
 
 class OnboardingFragment2 : Fragment() {
-    private var title: String? = null
-    private var description: String? = null
+    private lateinit var title: String
+    private lateinit var description: String
     private var imageResource = 0
     private lateinit var tvTitle: AppCompatTextView
     private lateinit var tvDescription: AppCompatTextView
     private lateinit var image: LottieAnimationView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
             title =
-                arguments!!.getString(ARG_PARAM1)
+                arguments!!.getString(ARG_PARAM1)!!
             description =
-                arguments!!.getString(ARG_PARAM2)
+                arguments!!.getString(ARG_PARAM2)!!
             imageResource =
                 arguments!!.getInt(ARG_PARAM3)
         }
@@ -50,12 +52,12 @@ class OnboardingFragment2 : Fragment() {
         private const val ARG_PARAM2 = "param2"
         private const val ARG_PARAM3 = "param3"
         fun newInstance(
-            title: String?,
-            description: String?,
+            title: String,
+            description: String,
             imageResource: Int
-        ): OnboardingFragment {
+        ): OnboardingFragment2 {
             val fragment =
-                OnboardingFragment()
+                OnboardingFragment2()
             val args = Bundle()
             args.putString(
                 ARG_PARAM1,
