@@ -13,4 +13,9 @@
     <string name="start_text_advice">By continuing on this application you agree to our Terms of Use and Privacy Policy</string>
     <string name="create_account">Create my account</string>
     <string name="account_creation_suggest">Do not have an account yet ? open your account in 5 minutes</string>
+    <string name="start">start</string>
+    <string name="skip">Skip</string>
+    <string name="finish">finish</string>
+    <string name="next">next</string>
+    <string name="back">back</string>
 </resources>

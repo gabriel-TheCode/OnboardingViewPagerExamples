@@ -6,6 +6,7 @@
 
     <color name="light_grey">#ABABAB</color>
     <color name="dark_grey">#333333</color>
+    <color name="dark_blue">#405467</color>
 
     <!-- google's material design colors from
      http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->

@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.thecode.onboardingviewagerexamples.R
-import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment
-import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment3
+import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment4
 
-class OnboardingViewPagerAdapter3(
+class OnboardingViewPagerAdapter4(
     fragmentManager: FragmentManager,
     private val context: Context
 ) :
@@ -22,23 +21,20 @@ class OnboardingViewPagerAdapter3(
     // Returns the fragment to display for that page
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> OnboardingFragment3.newInstance(
+            0 -> OnboardingFragment4.newInstance(
                 context.resources.getString(R.string.title_onboarding_1),
                 context.resources.getString(R.string.description_onboarding_1),
-                R.raw.lottie_splash_animation,
-                "#4CAF50"
+                R.raw.lottie_splash_animation
             )
-            1 -> OnboardingFragment3.newInstance(
+            1 -> OnboardingFragment4.newInstance(
                 context.resources.getString(R.string.title_onboarding_2),
                 context.resources.getString(R.string.description_onboarding_2),
-                R.raw.lottie_girl_with_a_notebook,
-                "#F44336"
+                R.raw.lottie_girl_with_a_notebook
             )
-            2 -> OnboardingFragment3.newInstance(
+            2 -> OnboardingFragment4.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
                 context.resources.getString(R.string.description_onboarding_3),
-                R.raw.lottie_messaging,
-                "#2196F3"
+                R.raw.lottie_messaging
             )
             else -> null
         }!!

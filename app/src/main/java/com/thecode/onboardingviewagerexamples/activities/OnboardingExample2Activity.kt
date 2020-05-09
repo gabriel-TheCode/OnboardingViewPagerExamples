@@ -23,8 +23,6 @@ class OnboardingExample2Activity : AppCompatActivity() {
             finish()
         }
 
-        //setSpannableStringText()
-
         mViewPager = findViewById(R.id.viewPager)
         mViewPager.adapter = OnboardingViewPagerAdapter2(supportFragmentManager, this)
         mViewPager.offscreenPageLimit = 1

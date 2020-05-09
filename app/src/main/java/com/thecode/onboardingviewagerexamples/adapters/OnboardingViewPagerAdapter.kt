@@ -24,17 +24,17 @@ class OnboardingViewPagerAdapter(
             0 -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_1),
                 context.resources.getString(R.string.description_onboarding_1),
-                R.drawable.ic_app_user_colour
+                R.raw.lottie_splash_animation
             )
             1 -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_2),
                 context.resources.getString(R.string.description_onboarding_2),
-                R.drawable.ic_gamer_colour
+                R.raw.lottie_rotating_sun
             )
             2 -> OnboardingFragment.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
                 context.resources.getString(R.string.description_onboarding_3),
-                R.drawable.ic_social_feed_colour
+                R.raw.lottie_messaging
             )
             else -> null
         }!!

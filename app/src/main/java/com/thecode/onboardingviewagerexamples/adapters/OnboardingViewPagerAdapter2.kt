@@ -24,17 +24,17 @@ class OnboardingViewPagerAdapter2(
             0 -> OnboardingFragment2.newInstance(
                 context.resources.getString(R.string.title_onboarding_1),
                 context.resources.getString(R.string.description_onboarding_1),
-                R.raw.lottie_money
+                R.raw.lottie_delivery_boy_bumpy_ride
             )
             1 -> OnboardingFragment2.newInstance(
                 context.resources.getString(R.string.title_onboarding_2),
                 context.resources.getString(R.string.description_onboarding_2),
-                R.raw.lottie_scanning
+                R.raw.lottie_developer
             )
             2 -> OnboardingFragment2.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
                 context.resources.getString(R.string.description_onboarding_3),
-                R.raw.lottie_security
+                R.raw.lottie_girl_with_a_notebook
             )
             else -> null
         }!!
