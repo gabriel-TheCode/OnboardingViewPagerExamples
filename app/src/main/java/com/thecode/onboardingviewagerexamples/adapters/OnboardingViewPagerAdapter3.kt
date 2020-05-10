@@ -8,11 +8,9 @@ import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment
 import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment3
 
-class OnboardingViewPagerAdapter3(
-    fragmentManager: FragmentManager,
-    private val context: Context
-) :
-    FragmentPagerAdapter(fragmentManager) {
+class OnboardingViewPagerAdapter3(manager: FragmentManager,
+                                  private val context : Context) :
+    FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     // Returns total number of pages
     override fun getCount(): Int {

@@ -7,11 +7,9 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment
 
-class OnboardingViewPagerAdapter(
-    fragmentManager: FragmentManager,
-    private val context: Context
-) :
-    FragmentPagerAdapter(fragmentManager) {
+class OnboardingViewPagerAdapter(manager: FragmentManager,
+                                 private val context : Context) :
+    FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     // Returns total number of pages
     override fun getCount(): Int {

@@ -31,6 +31,14 @@ class OnboardingExample4Activity : AppCompatActivity() {
                 mViewPager.setCurrentItem(getItem(+1), true)
             }
         }
+
+            btnBack.setOnClickListener {
+            if (getItem(+1) == 1) {
+                finish()
+            } else {
+                mViewPager.setCurrentItem(getItem(-1), true)
+            }
+        }
     }
 
     private fun getItem(i: Int): Int {
