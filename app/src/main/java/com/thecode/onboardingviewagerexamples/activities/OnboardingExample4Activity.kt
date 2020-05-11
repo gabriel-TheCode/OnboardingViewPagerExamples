@@ -2,7 +2,6 @@ package com.thecode.onboardingviewagerexamples.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.viewpager.widget.ViewPager
 import com.thecode.onboardingviewagerexamples.R
@@ -27,9 +26,9 @@ class OnboardingExample4Activity : AppCompatActivity() {
         mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageSelected(position: Int) {
                 if(position == 2){
-                    btnNext.text = "FINISH"
+                    btnNext.text = getText(R.string.finish)
                 }else{
-                    btnNext.text = "NEXT"
+                    btnNext.text = getText(R.string.next)
                 }
             }
 

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.thecode.onboardingviewagerexamples.R
-import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment
 import com.thecode.onboardingviewagerexamples.fragments.OnboardingFragment3
 
 class OnboardingViewPagerAdapter3(manager: FragmentManager,

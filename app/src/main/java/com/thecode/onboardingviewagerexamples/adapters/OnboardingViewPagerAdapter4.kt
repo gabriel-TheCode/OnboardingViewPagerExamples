@@ -27,7 +27,7 @@ class OnboardingViewPagerAdapter4(manager: FragmentManager,
             1 -> OnboardingFragment4.newInstance(
                 context.resources.getString(R.string.title_onboarding_2),
                 context.resources.getString(R.string.description_onboarding_2),
-                R.raw.lottie_girl_with_a_notebook
+                R.raw.lottie_watch_videos
             )
             2 -> OnboardingFragment4.newInstance(
                 context.resources.getString(R.string.title_onboarding_3),
