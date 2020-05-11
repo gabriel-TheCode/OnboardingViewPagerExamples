@@ -32,13 +32,15 @@ class OnboardingExample3Activity : AppCompatActivity() {
         mViewPager.offscreenPageLimit = 1
         viewPager.addOnPageChangeListener(object : OnPageChangeListener {
             override fun onPageSelected(position: Int) {
-                /*if(getItem(+1) == mViewPager.childCount-1){
+                if(position == 2){
                     btnNextStep.visibility = View.GONE
                     textEnd.visibility = View.VISIBLE
+                    textSkip.visibility = View.GONE
                 }else{
                     btnNextStep.visibility = View.VISIBLE
                     textEnd.visibility = View.GONE
-                }*/
+                    textSkip.visibility = View.VISIBLE
+                }
             }
 
             override fun onPageScrolled(arg0: Int, arg1: Float, arg2: Int) {}

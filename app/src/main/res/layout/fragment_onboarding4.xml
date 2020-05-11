@@ -30,30 +30,18 @@
         android:textSize="19sp"
         android:gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/dark_blue"
-        fontPath="AvenirNextLTPro-Bold.otf"/>
+        android:textColor="@color/dark_blue"/>
 
-    <TextView
-        android:id="@+id/text_onboarding_step"
-        android:layout_below="@id/text_onboarding_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Step 2"
-        android:textSize="16sp"
-        android:layout_margin="20dp"
-        android:layout_centerHorizontal="true"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_onboarding_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_onboarding_step"
+        android:layout_below="@id/text_onboarding_title"
         android:text="@string/description_onboarding_1"
         android:textSize="14sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_margin="30dp"
         android:textColor="@color/dark_blue"
-        android:gravity="center"
-        android:layout_marginBottom="30dp"/>
+        android:gravity="center"/>
 
 </RelativeLayout>

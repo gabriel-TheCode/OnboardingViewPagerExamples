@@ -31,8 +31,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/dark_grey"
-        android:layout_marginBottom="30dp"
-        fontPath="AvenirNextLTPro-Bold.otf"/>
+        android:layout_marginBottom="30dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_onboarding_description"

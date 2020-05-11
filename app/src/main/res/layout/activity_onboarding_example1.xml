@@ -59,7 +59,7 @@
             android:layout_height="50dp"
             android:background="?android:attr/selectableItemBackground"
             android:drawableTint="@color/md_grey_900"
-            android:text="NEXT"
+            android:text="@string/next"
             android:textSize="16sp"
             android:layout_margin="10dp"
             android:textColor="@color/colorPrimary"

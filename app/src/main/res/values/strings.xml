@@ -1,18 +1,17 @@
 <resources>
     <string name="app_name">Onboarding ViewPager Examples</string>
 
-    <string name="title_onboarding_1">Your financial information and payment is 100% secure</string>
-    <string name="description_onboarding_1">Financial Payments is an innovative technology company that develops optimal payment products that drive non-interest income for financial institutions. </string>
+    <string name="title_onboarding_1">Keep your financial information safe</string>
+    <string name="description_onboarding_1">Financial Payments is an innovative technology company that develops optimal payment products that drive non-interest income for financial institutions.</string>
 
-    <string name="title_onboarding_2">Security improved with face recognition during all your transactions</string>
+    <string name="title_onboarding_2">All your transactions is secured</string>
     <string name="description_onboarding_2">The face recognition system is creating a safer planet through face recognition security software for retailers, airports, law enforcement and more.</string>
 
-    <string name="title_onboarding_3">Manage all your credit cards in one place</string>
+    <string name="title_onboarding_3">Manage all your credit cards</string>
     <string name="description_onboarding_3">Our mission is to make you less stressed and better off financially. We help save you money through lower interest rates and no late fees, but we also make life easier by being a mobile credit card manager. Start Saving!</string>
 
     <string name="start_text_advice">By continuing on this application you agree to our Terms of Use and Privacy Policy</string>
-    <string name="create_account">Create my account</string>
-    <string name="account_creation_suggest">Do not have an account yet ? open your account in 5 minutes</string>
+
     <string name="start">start</string>
     <string name="skip">Skip</string>
     <string name="finish">finish</string>
