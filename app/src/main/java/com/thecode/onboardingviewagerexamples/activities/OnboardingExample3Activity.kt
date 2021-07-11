@@ -5,8 +5,8 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import com.jaeger.library.StatusBarUtil
 import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.adapters.OnboardingViewPagerAdapter3
@@ -15,10 +15,10 @@ import kotlinx.android.synthetic.main.activity_onboarding_example3.*
 
 class OnboardingExample3Activity : AppCompatActivity() {
 
-    private lateinit var mViewPager: ViewPager
+    private lateinit var mViewPager: ViewPager2
     private lateinit var textSkip: TextView
     private lateinit var textEnd: TextView
-    private lateinit var btnNextStep : ImageButton
+    private lateinit var btnNextStep: ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,15 +28,16 @@ class OnboardingExample3Activity : AppCompatActivity() {
         textSkip = text_skip
         textEnd = text_end
         btnNextStep = btn_next_step
-        mViewPager.adapter = OnboardingViewPagerAdapter3(supportFragmentManager, this)
+        mViewPager.adapter = OnboardingViewPagerAdapter3(this, this)
         mViewPager.offscreenPageLimit = 1
-        viewPager.addOnPageChangeListener(object : OnPageChangeListener {
+        TabLayoutMediator(pageIndicator, mViewPager) { _, _ -> }.attach()
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                if(position == 2){
+                if (position == 2) {
                     btnNextStep.visibility = View.GONE
                     textEnd.visibility = View.VISIBLE
                     textSkip.visibility = View.GONE
-                }else{
+                } else {
                     btnNextStep.visibility = View.VISIBLE
                     textEnd.visibility = View.GONE
                     textSkip.visibility = View.VISIBLE
@@ -60,18 +61,15 @@ class OnboardingExample3Activity : AppCompatActivity() {
 
         val btnNextStep: ImageButton = btn_next_step
         btnNextStep.setOnClickListener {
-            if (getItem(+1) > mViewPager.childCount-1) {
-              finish()
+            if (getItem() > mViewPager.childCount) {
+                finish()
             } else {
-                mViewPager.setCurrentItem(getItem(+1), true)
+                mViewPager.setCurrentItem(getItem() + 1, true)
             }
         }
-
-
-
     }
 
-    private fun getItem(i: Int): Int {
-        return mViewPager.currentItem + i
+    private fun getItem(): Int {
+        return mViewPager.currentItem
     }
 }

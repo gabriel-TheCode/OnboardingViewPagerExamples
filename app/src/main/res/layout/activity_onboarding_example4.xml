@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:background="@color/md_white_1000">
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:clipToPadding="false"
         android:overScrollMode="never"
         android:layout_above="@id/bottom_navigation" />
@@ -23,22 +23,17 @@
         android:background="@color/md_white_1000"
         android:layout_alignParentBottom="true">
 
-        <com.rd.PageIndicatorView
-            android:id="@+id/pageIndicatorView"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/pageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            app:piv_animationType="worm"
-            app:piv_dynamicCount="true"
             android:layout_margin="10dp"
-            app:piv_interactiveAnimation="true"
-            app:piv_selectedColor="@color/md_deep_orange_300"
-            app:piv_unselectedColor="@color/md_deep_orange_100"
-            app:piv_viewPager="@id/viewPager"
-            app:piv_padding="8dp"
-            app:piv_radius="5dp"/>
-
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabBackground="@drawable/onboarding_viewpager_selector_orange"/>
 
         <Button
             android:id="@+id/btn_previous_step"

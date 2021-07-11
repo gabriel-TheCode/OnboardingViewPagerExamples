@@ -20,16 +20,16 @@ class OnboardingFragment3 : Fragment() {
     private lateinit var tvTitle: AppCompatTextView
     private lateinit var tvDescription: AppCompatTextView
     private lateinit var image: LottieAnimationView
-    private lateinit var layout:  RelativeLayout
-    private lateinit var mFakeStatusBar:  View
+    private lateinit var layout: RelativeLayout
+    private lateinit var mFakeStatusBar: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            title = arguments!!.getString(ARG_PARAM1)!!
-            description = arguments!!.getString(ARG_PARAM2)!!
-            imageResource = arguments!!.getInt(ARG_PARAM3)
-            backgroundColor = arguments!!.getString(ARG_PARAM4)!!
+            title = requireArguments().getString(ARG_PARAM1)!!
+            description = requireArguments().getString(ARG_PARAM2)!!
+            imageResource = requireArguments().getInt(ARG_PARAM3)
+            backgroundColor = requireArguments().getString(ARG_PARAM4)!!
         }
     }
 

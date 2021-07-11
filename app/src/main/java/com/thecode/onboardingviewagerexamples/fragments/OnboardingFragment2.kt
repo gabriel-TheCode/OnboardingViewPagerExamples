@@ -23,11 +23,11 @@ class OnboardingFragment2 : Fragment() {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
             title =
-                arguments!!.getString(ARG_PARAM1)!!
+                requireArguments().getString(ARG_PARAM1)!!
             description =
-                arguments!!.getString(ARG_PARAM2)!!
+                requireArguments().getString(ARG_PARAM2)!!
             imageResource =
-                arguments!!.getInt(ARG_PARAM3)
+                requireArguments().getInt(ARG_PARAM3)
         }
     }
 
