@@ -21,9 +21,9 @@ class OnboardingFragment4 : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            title = arguments!!.getString(ARG_PARAM1)!!
-            description = arguments!!.getString(ARG_PARAM2)!!
-            imageResource = arguments!!.getInt(ARG_PARAM3)
+            title = requireArguments().getString(ARG_PARAM1)!!
+            description = requireArguments().getString(ARG_PARAM2)!!
+            imageResource = requireArguments().getInt(ARG_PARAM3)
         }
     }
 
