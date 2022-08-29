@@ -5,15 +5,18 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.thecode.onboardingviewagerexamples.R
-import kotlinx.android.synthetic.main.activity_onboarding_finish.*
+import com.thecode.onboardingviewagerexamples.databinding.ActivityOnboardingFinishBinding
 
 class OnboardingFinishActivity : AppCompatActivity() {
     private lateinit var btnStart: LinearLayout
 
+    private lateinit var binding: ActivityOnboardingFinishBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding_finish)
-        btnStart = layout_start
+        binding = ActivityOnboardingFinishBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        btnStart = binding.layoutStart
         btnStart.setOnClickListener {
             finish()
         }

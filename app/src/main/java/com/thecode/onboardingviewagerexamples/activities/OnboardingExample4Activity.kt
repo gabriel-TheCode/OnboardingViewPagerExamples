@@ -7,7 +7,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.adapters.OnboardingViewPagerAdapter4
-import kotlinx.android.synthetic.main.activity_onboarding_example4.*
+import com.thecode.onboardingviewagerexamples.databinding.ActivityOnboardingExample4Binding
 
 class OnboardingExample4Activity : AppCompatActivity() {
 
@@ -15,15 +15,17 @@ class OnboardingExample4Activity : AppCompatActivity() {
     private lateinit var btnBack: Button
     private lateinit var btnNext: Button
 
-
+    private lateinit var binding: ActivityOnboardingExample4Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding_example4)
-        mViewPager = viewPager
+        binding = ActivityOnboardingExample4Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        mViewPager = binding.viewPager
         mViewPager.adapter = OnboardingViewPagerAdapter4(this, this)
         mViewPager.offscreenPageLimit = 1
-        btnBack = btn_previous_step
-        btnNext = btn_next_step
+        btnBack = binding.btnPreviousStep
+        btnNext = binding.btnNextStep
         mViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 if (position == 2) {
@@ -36,7 +38,7 @@ class OnboardingExample4Activity : AppCompatActivity() {
             override fun onPageScrolled(arg0: Int, arg1: Float, arg2: Int) {}
             override fun onPageScrollStateChanged(arg0: Int) {}
         })
-        TabLayoutMediator(pageIndicator, mViewPager) { _, _ -> }.attach()
+        TabLayoutMediator(binding.pageIndicator, mViewPager) { _, _ -> }.attach()
 
         btnNext.setOnClickListener {
             if (getItem() > mViewPager.childCount) {

@@ -10,7 +10,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
 import com.thecode.onboardingviewagerexamples.R
-import kotlinx.android.synthetic.main.fragment_onboarding3.view.*
+import com.thecode.onboardingviewagerexamples.databinding.FragmentOnboarding3Binding
 
 class OnboardingFragment3 : Fragment() {
     private lateinit var title: String
@@ -33,24 +33,33 @@ class OnboardingFragment3 : Fragment() {
         }
     }
 
+    private var _binding: FragmentOnboarding3Binding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootLayout: View =
-            inflater.inflate(R.layout.fragment_onboarding3, container, false)
-        tvTitle = rootLayout.text_onboarding_title
-        tvDescription = rootLayout.text_onboarding_description
-        image = rootLayout.image_onboarding
-        layout = rootLayout.layout_container
-        mFakeStatusBar = rootLayout.fake_statusbar_view
+        _binding = FragmentOnboarding3Binding.inflate(inflater, container, false)
+        val view = binding.root
+        tvTitle = binding.textOnboardingTitle
+        tvDescription = binding.textOnboardingDescription
+        image = binding.imageOnboarding
+        layout = binding.layoutContainer
+        mFakeStatusBar = binding.fakeStatusbarView
         tvTitle.text = title
         tvDescription.text = description
         image.setAnimation(imageResource)
         layout.setBackgroundColor(Color.parseColor(backgroundColor))
         mFakeStatusBar.setBackgroundColor(Color.parseColor(backgroundColor))
-        return rootLayout
+        return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

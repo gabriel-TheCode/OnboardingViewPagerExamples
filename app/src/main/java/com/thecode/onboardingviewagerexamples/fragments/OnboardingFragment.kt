@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
 import com.thecode.onboardingviewagerexamples.R
-import kotlinx.android.synthetic.main.fragment_onboarding1.view.*
+import com.thecode.onboardingviewagerexamples.databinding.FragmentOnboarding1Binding
 
 class OnboardingFragment : Fragment() {
     private var title: String? = null
@@ -17,6 +17,7 @@ class OnboardingFragment : Fragment() {
     private lateinit var tvTitle: AppCompatTextView
     private lateinit var tvDescription: AppCompatTextView
     private lateinit var image: LottieAnimationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
@@ -26,20 +27,30 @@ class OnboardingFragment : Fragment() {
         }
     }
 
+    private var _binding: FragmentOnboarding1Binding? = null
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val rootLayout: View =
-            inflater.inflate(R.layout.fragment_onboarding1, container, false)
-        tvTitle = rootLayout.text_onboarding_title
-        tvDescription = rootLayout.text_onboarding_description
-        image = rootLayout.image_onboarding
+        _binding = FragmentOnboarding1Binding.inflate(inflater, container, false)
+        val view = binding.root
+
+        tvTitle = binding.textOnboardingTitle
+        tvDescription = binding.textOnboardingDescription
+        image = binding.imageOnboarding
         tvTitle.text = title
         tvDescription.text = description
         image.setAnimation(imageResource)
-        return rootLayout
+        return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
