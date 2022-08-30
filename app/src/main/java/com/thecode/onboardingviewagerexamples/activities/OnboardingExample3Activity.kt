@@ -10,7 +10,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.jaeger.library.StatusBarUtil
 import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.adapters.OnboardingViewPagerAdapter3
-import kotlinx.android.synthetic.main.activity_onboarding_example3.*
+import com.thecode.onboardingviewagerexamples.databinding.ActivityOnboardingExample3Binding
 
 
 class OnboardingExample3Activity : AppCompatActivity() {
@@ -20,18 +20,20 @@ class OnboardingExample3Activity : AppCompatActivity() {
     private lateinit var textEnd: TextView
     private lateinit var btnNextStep: ImageButton
 
-
+    private lateinit var binding: ActivityOnboardingExample3Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding_example3)
-        mViewPager = viewPager
-        textSkip = text_skip
-        textEnd = text_end
-        btnNextStep = btn_next_step
+        binding = ActivityOnboardingExample3Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        mViewPager = binding.viewPager
+        textSkip = binding.textSkip
+        textEnd = binding.textEnd
+        btnNextStep = binding.btnNextStep
         mViewPager.adapter = OnboardingViewPagerAdapter3(this, this)
         mViewPager.offscreenPageLimit = 1
-        TabLayoutMediator(pageIndicator, mViewPager) { _, _ -> }.attach()
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        TabLayoutMediator(binding.pageIndicator, mViewPager) { _, _ -> }.attach()
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 if (position == 2) {
                     btnNextStep.visibility = View.GONE
@@ -59,7 +61,7 @@ class OnboardingExample3Activity : AppCompatActivity() {
             finish()
         }
 
-        val btnNextStep: ImageButton = btn_next_step
+        val btnNextStep: ImageButton = binding.btnNextStep
         btnNextStep.setOnClickListener {
             if (getItem() > mViewPager.childCount) {
                 finish()

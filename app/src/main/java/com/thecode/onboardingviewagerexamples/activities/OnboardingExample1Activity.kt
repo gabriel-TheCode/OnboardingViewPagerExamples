@@ -9,22 +9,25 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
 import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.adapters.OnboardingViewPagerAdapter
+import com.thecode.onboardingviewagerexamples.databinding.ActivityOnboardingExample1Binding
 import com.thecode.onboardingviewagerexamples.utils.Animatoo
-import kotlinx.android.synthetic.main.activity_onboarding_example1.*
 
 class OnboardingExample1Activity : AppCompatActivity() {
 
     private lateinit var mViewPager: ViewPager2
     private lateinit var textSkip: TextView
 
+    private lateinit var binding: ActivityOnboardingExample1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboarding_example1)
+        binding = ActivityOnboardingExample1Binding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        mViewPager = viewPager
+        mViewPager = binding.viewPager
         mViewPager.adapter = OnboardingViewPagerAdapter(this, this)
-        TabLayoutMediator(pageIndicator, mViewPager) { _, _ -> }.attach()
+        TabLayoutMediator(binding.pageIndicator, mViewPager) { _, _ -> }.attach()
         textSkip = findViewById(R.id.text_skip)
         textSkip.setOnClickListener {
             finish()

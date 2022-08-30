@@ -16,7 +16,8 @@
         <activity android:name=".activities.OnboardingExample3Activity" />
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
