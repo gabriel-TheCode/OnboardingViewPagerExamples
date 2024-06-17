@@ -19,13 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         when (view.id) {
-
             R.id.btn_example1 -> {
                 val intent =
                     Intent(applicationContext, OnboardingExample1Activity::class.java)
                 startActivity(intent)
             }
-
             R.id.btn_example2 -> {
                 val intent =
                     Intent(applicationContext, OnboardingExample2Activity::class.java)

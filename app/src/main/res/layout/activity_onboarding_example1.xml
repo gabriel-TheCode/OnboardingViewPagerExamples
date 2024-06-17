@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rl_create_account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_white_1000">
@@ -10,54 +9,53 @@
         android:id="@+id/text_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/skip"
-        app:textAllCaps="true"
-        android:textSize="18sp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/skip"
+        android:textSize="18sp"
+        app:textAllCaps="true" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
+        android:layout_above="@id/bottom_navigation"
         android:layout_below="@id/text_skip"
-        android:layout_above="@id/bottom_navigation" />
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
 
     <RelativeLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:background="@color/md_white_1000"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/pageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_margin="30dp"
-            app:tabBackground="@drawable/onboarding_viewpager_selector_blue"/>
-
+            app:tabBackground="@drawable/onboarding_viewpager_selector_blue"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
 
         <Button
             android:id="@+id/btn_next_step"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
             android:background="?android:attr/selectableItemBackground"
             android:drawableTint="@color/md_grey_900"
             android:text="@string/next"
-            android:textSize="16sp"
-            android:layout_margin="10dp"
             android:textColor="@color/colorPrimary"
-            android:layout_alignParentEnd="true"/>
+            android:textSize="16sp" />
 
     </RelativeLayout>
 
