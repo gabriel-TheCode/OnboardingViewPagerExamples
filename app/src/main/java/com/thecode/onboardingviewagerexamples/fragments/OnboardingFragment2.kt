@@ -4,51 +4,40 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatTextView
 import androidx.fragment.app.Fragment
-import com.airbnb.lottie.LottieAnimationView
-import com.thecode.onboardingviewagerexamples.R
 import com.thecode.onboardingviewagerexamples.databinding.FragmentOnboarding2Binding
 
 class OnboardingFragment2 : Fragment() {
     private lateinit var title: String
     private lateinit var description: String
     private var imageResource = 0
-    private lateinit var tvTitle: AppCompatTextView
-    private lateinit var tvDescription: AppCompatTextView
-    private lateinit var image: LottieAnimationView
-
+    private var _binding: FragmentOnboarding2Binding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            title =
-                requireArguments().getString(ARG_PARAM1)!!
-            description =
-                requireArguments().getString(ARG_PARAM2)!!
-            imageResource =
-                requireArguments().getInt(ARG_PARAM3)
+            requireArguments().apply {
+                title = getString(ARG_TITLE)!!
+                description = getString(ARG_DESCRIPTION)!!
+                imageResource = getInt(ARG_IMAGE_RES)
+            }
         }
     }
 
-    private var _binding: FragmentOnboarding2Binding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentOnboarding2Binding.inflate(inflater, container, false)
-        val view = binding.root
-        tvTitle = binding.textOnboardingTitle
-        tvDescription = binding.textOnboardingDescription
-        image = binding.imageOnboarding
-        tvTitle.text = title
-        tvDescription.text = description
-        image.setAnimation(imageResource)
-        return view
+        binding.apply {
+            textOnboardingTitle.text = title
+            textOnboardingDescription.text = description
+            imageOnboarding.setAnimation(imageResource)
+        }
+
+        return binding.root
     }
 
     override fun onDestroyView() {
@@ -57,30 +46,22 @@ class OnboardingFragment2 : Fragment() {
     }
 
     companion object {
-        private const val ARG_PARAM1 = "param1"
-        private const val ARG_PARAM2 = "param2"
-        private const val ARG_PARAM3 = "param3"
+        private const val ARG_TITLE = "title"
+        private const val ARG_DESCRIPTION = "description"
+        private const val ARG_IMAGE_RES = "imageRes"
+
         fun newInstance(
             title: String,
             description: String,
             imageResource: Int
         ): OnboardingFragment2 {
-            val fragment =
-                OnboardingFragment2()
-            val args = Bundle()
-            args.putString(
-                ARG_PARAM1,
-                title
-            )
-            args.putString(
-                ARG_PARAM2,
-                description
-            )
-            args.putInt(
-                ARG_PARAM3,
-                imageResource
-            )
-            fragment.arguments = args
+            val fragment = OnboardingFragment2()
+            fragment.arguments = Bundle().apply {
+                putString(ARG_TITLE, title)
+                putString(ARG_DESCRIPTION, description)
+                putInt(ARG_IMAGE_RES, imageResource)
+            }
+
             return fragment
         }
     }

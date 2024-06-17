@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rl_create_account"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_white_1000">
@@ -11,58 +9,58 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
         android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:layout_above="@id/bottom_navigation" />
+        android:overScrollMode="never" />
 
     <RelativeLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:background="@color/md_white_1000"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/pageIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:layout_margin="10dp"
+            app:tabBackground="@drawable/onboarding_viewpager_selector_orange"
             app:tabGravity="center"
-            app:tabIndicatorHeight="0dp"
-            app:tabBackground="@drawable/onboarding_viewpager_selector_orange"/>
+            app:tabIndicatorHeight="0dp" />
 
         <Button
             android:id="@+id/btn_previous_step"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:text="@string/back"
-            android:textAllCaps="true"
-            android:textColor="@color/dark_blue"
-            android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/btn_grey_rounded_selector"/>
+            android:background="@drawable/btn_grey_rounded_selector"
+            android:text="@string/back"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_blue" />
 
 
         <Button
             android:id="@+id/btn_next_step"
             android:layout_width="90dp"
             android:layout_height="50dp"
-            android:text="@string/next"
-            android:textAllCaps="true"
-            android:textColor="@color/md_white_1000"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginStart="30dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/btn_orange_rounded_selector"/>
+            android:background="@drawable/btn_orange_rounded_selector"
+            android:text="@string/next"
+            android:textAllCaps="true"
+            android:textColor="@color/md_white_1000" />
 
     </RelativeLayout>
 
